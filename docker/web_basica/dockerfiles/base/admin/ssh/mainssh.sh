@@ -14,6 +14,6 @@ configurar_ssh() {
   # Reinicar el servicio SSH para que se aplique las configuraciones
 
   #exec /usr/sbin/sshd -D & # dejar el ssh en background PARA CUANDO LO IMPLEMENTOS EN UN SERVICIO
-  service ssh restart
-  #exec /usr/sbin/sshd -D &
+  #service ssh restart
+  exec /usr/sbin/sshd -D &
 }
