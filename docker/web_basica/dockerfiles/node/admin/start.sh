@@ -11,10 +11,6 @@ workdir(){
 }
 
 dependencias(){
-    nvm install 22
-    nvm use 22
-    node -v   # v22.x
-    npm -v    # cambia automáticamente
     npm install
     npm run build
     cp -r dist/* /var/www/html/
