@@ -1,0 +1,23 @@
+services:
+  web:
+    build:
+      context: ${CONTEXTO}
+      dockerfile: ./dockerfiles/base/ubbase 
+    container_name: ${CONTAINER_NAME}
+    image: adri/ubbase
+    ports:
+      - ${PORT_SSH}:80
+    env_file:
+      - ./.env
+    volumes:
+      - ./logs:/root/logs 
+    networks:
+      netwebbasica:
+        ipv4_address: ${IP_WEB}
+networks:
+  netwebbasica:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: ${SUBNET}
