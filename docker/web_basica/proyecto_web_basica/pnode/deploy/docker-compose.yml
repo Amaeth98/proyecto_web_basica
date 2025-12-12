@@ -1,0 +1,23 @@
+services:
+  web:
+    build:
+      context: ${CONTEXTO}
+      dockerfile: ./dockerfiles/node/node
+    container_name: ${CONTAINER_NAME}
+    image: adri/node
+    ports:
+      - ${PORT_SSH}:80
+    env_file:
+      - ./.env
+    volumes:
+      - ./logs:/root/logs 
+    networks:
+      netwebbasica:
+        ipv4_address: ${IP_WEB}
+networks:
+  netwebbasica:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: ${SUBNET}
