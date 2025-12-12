@@ -1,9 +1,9 @@
 FROM adri/nginx
 
 RUN apt install -yq --no-install-recommends \
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash \
     nodejs \
     npm
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash 
 
 RUN mkdir -p /root/admin/node
 RUN mkdir -p /root/admin/node/proyecto_web_basica/web_basica_adriana
