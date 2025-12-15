@@ -23,7 +23,7 @@ export default function NavbarComponent() {
           <NavLink to="/fotos" className="nav-link">
             <span className="nav-icon-text">
               <FaScrewdriverWrench className="nav-icon" />
-              Foto
+              Fotografias
             </span>
           </NavLink>
 
