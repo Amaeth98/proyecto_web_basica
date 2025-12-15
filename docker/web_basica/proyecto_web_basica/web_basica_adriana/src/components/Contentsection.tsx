@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Carousel from "react-bootstrap/Carousel";
-import HeroesTabla from "./HeroesTabla";
+{/*import HeroesTabla from "./HeroesTabla";*/}
 
 interface CardProps {
   title: string;
@@ -107,7 +107,7 @@ export default function Contentsection({ mode = "inicio" }: ContentsectionProps)
   ];
 
   const mostrarCards = mode === "inicio";
-  const mostrarTablas = mode === "inicio";
+  {/*const mostrarTablas = mode === "inicio";*/}
   const mostrarCarrusel = mode === "inicio" || mode === "fotos";
 
   return (
@@ -234,12 +234,12 @@ export default function Contentsection({ mode = "inicio" }: ContentsectionProps)
         </>
       )}
 
-      {mostrarTablas && (
+    {/*  {mostrarTablas && (
         <>
           <HeroesTabla publisher="Marvel Comics" />
           <HeroesTabla publisher="DC Comics" />
         </>
-      )}
+      )}*/}
     </Container>
   );
 }
