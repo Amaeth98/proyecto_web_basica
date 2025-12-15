@@ -1,0 +1,1 @@
+docker exec contenedor_base bash -c "cd /root/admin/node/proyecto_web_basica/web_basica_adriana && npm run build && cp -r dist/* /var/www/html/"
