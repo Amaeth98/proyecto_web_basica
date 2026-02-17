@@ -1,0 +1,16 @@
+services:
+webtaller:
+    build:
+      context: ${CONTEXTO}
+      dockerfile: ./dockerfiles/nginx/nginx
+    container_name: ${CONTAINER_NAME}
+    image: adri/nginx
+    ports:
+      - ${PORT_WEB}:80
+    env_file:
+      - ./.env
+    volumes:
+      - ./logs:/root/logs 
+    networks:
+      netwebbasicanginx:
+        ipv4_address: ${IP_WEB}

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: miportfolio-deployment
+  labels:
+    app: miportfolio
+    namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: miportfolio
+  template:
+    metadata:
+      labels:
+        app: miportfolio
+    spec:
+      containers:
+        - name: miportfolio-container
+          image: adri/miportfolio:latest
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
